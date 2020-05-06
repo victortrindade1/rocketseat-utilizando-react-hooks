@@ -1,3 +1,24 @@
+# Hook useState
+
+- Para funções terem state dentro do component. Antes, só podia ter state nas
+  classes. Agora, tb as functions.
+- Controla apenas um estado.
+- Cada estado tem um useState separado.
+- Apenas um estado é alterado, em vez de alterar todo o estado, como faz o
+  setState.
+- O return faz papel de render(). A cada alteração do estado, renderiza o
+  return.
+- O useState recebe desde arrays, a objetos, números, strings...
+
+```javascript
+// foobar: estado
+// foobarFunction: função q atualiza foobar
+const [foobar, foobarFunction] = useState(['foo', 'bar']);
+```
+
+## src/App.js
+
+```javascript
 import React, { useState } from 'react';
 
 function App() {
@@ -28,3 +49,4 @@ function App() {
 }
 
 export default App;
+```
