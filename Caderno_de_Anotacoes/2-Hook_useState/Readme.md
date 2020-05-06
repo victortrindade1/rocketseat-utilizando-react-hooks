@@ -28,7 +28,6 @@ function App() {
   // newTech é outro estado
   const [newTech, setNewTech] = useState('');
 
-  // Funções passadas como se fossem métodos de classes não podem ser arrow functions
   function handleAdd() {
     setTech([...tech, newTech]);
     setNewTech('');
