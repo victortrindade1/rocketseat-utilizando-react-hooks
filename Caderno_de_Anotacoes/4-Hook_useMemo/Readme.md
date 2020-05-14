@@ -100,4 +100,4 @@ function App() {
 export default App;
 ```
 
-> O useMemo faz com q execute a função length apenas qnd tech é mudado
+> O useMemo faz com q execute tech.length apenas qnd tech é mudado

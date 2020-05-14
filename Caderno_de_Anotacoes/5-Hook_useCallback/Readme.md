@@ -1,4 +1,25 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+# Hook useCallback
+
+Assim como o useMemo, o useCallback veio para melhorar a performance da memória
+pra rodar o app mais liso e rápido. Basicamente, o useCallback serve para
+executar funções apenas qnd um determinado estado é alterado. Mas... ué, achei
+q era exatamente pra isso q servia o useMemo... sim, a diferença é apenas q o
+_useMemo retorna um valor, e useCallback retorna uma função!_
+
+> useCallback retorna um callback memoizado
+> useMemo retorna um valor memoizado
+
+```javascript
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b);
+}, [a, b]);
+```
+
+## src/App.js
+
+```diff
+-import React, { useState, useEffect, useMemo } from 'react';
++import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 function App() {
   // Primeiro item: estado
@@ -7,10 +28,12 @@ function App() {
   // newTech é outro estado
   const [newTech, setNewTech] = useState('');
 
-  const handleAdd = useCallback(() => {
+-  function handleAdd() {
++  const handleAdd = useCallback(() => {
     setTech([...tech, newTech]);
     setNewTech('');
-  }, [newTech, tech]);
+-  }
++  }, [newTech, tech]);
 
   useEffect(() => {
     const storageTech = localStorage.getItem('tech');
@@ -43,3 +66,4 @@ function App() {
 }
 
 export default App;
+```
