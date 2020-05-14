@@ -26,7 +26,7 @@ Caso o estado `tech` seja alterado, roda a função de setar no localStorage.
 
 ## Substituindo componentDidMount()
 
-Só passar um array de dependências vazio como segundo argumento. Assim, sem
+Só passar um array de dependências vazio como segundo parâmetro. Assim, sem
 existir um "quando executar", irá apenas executar qnd montar o component.
 
 Ex:
