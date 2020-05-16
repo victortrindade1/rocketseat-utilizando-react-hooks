@@ -6,8 +6,8 @@ executar funções apenas qnd um determinado estado é alterado. Mas... ué, ach
 q era exatamente pra isso q servia o useMemo... sim, a diferença é apenas q o
 _useMemo retorna um valor, e useCallback retorna uma função!_
 
-> useCallback retorna um callback memoizado
-> useMemo retorna um valor memoizado
+- useCallback: retorna um **callback** memoizado
+- useMemo: retorna um **valor** memoizado
 
 ```javascript
 const memoizedCallback = useCallback(() => {
