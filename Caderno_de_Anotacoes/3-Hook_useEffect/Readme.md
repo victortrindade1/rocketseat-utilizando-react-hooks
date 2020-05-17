@@ -63,6 +63,21 @@ useEffect(() => {
 }, []);
 ```
 
+## Usando useEffect com async await
+
+O melhor jeito de trabalhar com funções assíncronas no useEffect é criar
+uma função assíncrona dentro do useEffect, e depois chamá-la, desta forma:
+
+```javascript
+useEffect(() => {
+  async function loadProducts() {
+    ...
+  }
+
+  loadProducts();
+});
+```
+
 ## src/App.js
 
 ```diff
